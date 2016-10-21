@@ -1,0 +1,12 @@
+<%
+if(blogs){
+blogs.forEach(function(blog, index){
+%>
+
+<h2>发表人：<%= blog.user %></h2>
+<h3>发表时间：<%= blog.time %></h3>
+<p><%= blog.blog %></p>
+
+<% })
+}
+%>

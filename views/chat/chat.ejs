@@ -1,0 +1,46 @@
+<% include ../_header %>
+
+<h1><%= title %></h1>
+<hr/>
+<input type="hidden" name="userName" id="userName"
+        <% if(user){ %>
+       value="<%= user.name %>"
+        <% } %>
+/>
+<table style="width: 100%;">
+    <tr>
+        <td colspan="2" align="left">
+            <p>你好
+                <% if(user){ %>
+                <%= user.name %>
+                <% } %>
+                ,
+                <span id="welcomeMessage"></span></p>
+            我要发言：<input type="text" name="message" id="message" value="" placeholder="请输入发言内容"
+                        onkeydown="if(event.keyCode==13){sendMessage();}"/>
+            <button type="button" onclick="sendMessage();">发送</button>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 15%;vertical-align: top;" align="left">
+            <!--在线用户列表-->
+            <p>当前在线</p>
+            <ul id="userList">
+
+            </ul>
+        </td>
+        <td style="width: 80%" align="left">
+            <div style="height:500px;overflow: auto;">
+                <!--在线聊天列表-->
+                <ul id="messageList">
+
+                </ul>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/javascripts/chat.js"></script>
+
+<% include ../_footer %>

@@ -1,0 +1,40 @@
+<% include ../_header %>
+
+<form action="/user/doReg" method="post" onsubmit="return checkInfo();">
+    <table style="width:600px;">
+        <tr>
+            <td style="width: 15%;text-align: right;">用户名：</td>
+            <td style="width: 85%;text-align: left;">
+                <input type="text" name="name" id="name" value="" placeholder="请输入用户名"/>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">密码：</td>
+            <td style="text-align: left;">
+                <input type="password" name="password" id="password" value="" placeholder="请输入密码"/>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" colspan="2">
+                <button type="submit">提交</button>
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+<script type="text/javascript">
+    function checkInfo(){
+        if(!$("#name").val()){
+            alert("用户名不能为空");
+            return false;
+        }
+
+        if(!$("#password").val()){
+            alert("密码不能为空");
+            return false;
+        }
+    }
+</script>
+
+<% include ../_footer %>

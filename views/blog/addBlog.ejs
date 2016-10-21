@@ -1,0 +1,20 @@
+<% include ../_header %>
+
+<form action="/blog/saveBlog" method="post" >
+    <table style="width:800px;">
+        <tr>
+            <td style="width: 25%;text-align: right;">内容：</td>
+            <td style="width: 75%;text-align: left;">
+                <textarea  name="blog" id="blog" maxlength="500" style="width:600px;height: 200px; "></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" colspan="2">
+                <button type="submit">发表</button>
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+<% include ../_footer %>

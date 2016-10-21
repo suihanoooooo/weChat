@@ -1,0 +1,36 @@
+<% include _header %>
+
+
+
+<h1><%= title %></h1>
+<% if(user){ %>
+<p>hello <%= user.name %>,Welcome to <%= titleEn %></p>
+<a href="/blog/addBlog">发表文章</a>
+<a href="/chat/toChat">进入聊天室</a>
+<a href="/user/logout">退出</a>
+<% }else{ %>
+<a href="/user/toLogin">登录</a>
+<% } %>
+<a href="/user/toReg">我要注册</a>
+
+<hr/>
+
+<!--文章列表-->
+<%
+if(blogs){
+blogs.forEach(function(blog, index){
+%>
+
+<h2>发表人：<%= blog.user %></h2>
+<h3>发表时间：<%= blog.time %></h3>
+<p><%= blog.blog %></p>
+
+<% })
+}
+%>
+
+<!--片段视图没有成功-->
+<!--显示微博列表[blogs对应ejs文件名,具体的变量在ejs文件中]-->
+<!--%- partial("blogs") %-->
+<% include _footer %>
+
