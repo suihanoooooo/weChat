@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 
-//自定义
+//自定义另一个文件
 var session = require('express-session');//加入session支持
 var User = require("./models/user");
 

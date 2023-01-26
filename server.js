@@ -2,6 +2,8 @@
  * Created by douqr on 2016/2/17.
  */
 
+// 添加一行注视在新分支上
+
 var io = require('socket.io')();
 var userList = [];
 var Message = require("./models/messageModel");
